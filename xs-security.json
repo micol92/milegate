@@ -1,0 +1,41 @@
+{
+    "xsappname": "fioriapp21-xsuaa-srv",
+    "tenant-mode": "dedicated",
+    "description": "Security profile of called application",
+    "scopes": [
+      {
+        "name": "uaa.user",
+        "description": "UAA"
+      },
+      {
+        "name": "$XSAPPNAME.Userfapp21",
+        "description": "fapp21 User Scope"
+      }
+  ],
+  "role-templates": [
+    {
+      "name": "Token_Exchange",
+      "description": "UAA",
+      "scope-references": [
+        "uaa.user"
+      ]
+    },
+    {
+        "name": "MyAppUserfapp21",
+        "description": "MyApp User fapp21",
+        "scope-references": [
+          "$XSAPPNAME.Userfapp21"
+        ]
+    }
+  ],
+  "role-collections": [
+    {
+      "name": "MyApp User fapp21",
+      "description": "MyApp User fapp21",
+      "role-template-references": [
+        "$XSAPPNAME.MyAppUserfapp21"
+      ]
+    }
+  ] 
+} 
+  
